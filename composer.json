@@ -1,0 +1,21 @@
+{
+  "name": "trinos/magento2-heroicons2",
+  "description": "Enables to use of Heroicons v2 in Hyva",
+  "version": "2.0.15",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "hyva-themes/magento2-theme-module": "*"
+  },
+  "license": [
+    "GNU General Public License (GPL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Trinos\\HeroIcons2\\": ""
+    }
+  }
+}
