@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"
->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Payment SVG icon mapping -->
     <type name="Hyva\Theme\ViewModel\SvgIcons">
         <arguments>
@@ -16,13 +14,11 @@
             <argument name="iconPathPrefix" xsi:type="string">Trinos_Heroicons2::svg/heroicons2/24/solid</argument>
         </arguments>
     </type>
-
     <type name="Trinos\Heroicons2\ViewModel\Heroicons2Outline">
         <arguments>
             <argument name="iconPathPrefix" xsi:type="string">Trinos_Heroicons2::svg/heroicons2/24/outline</argument>
         </arguments>
     </type>
-
     <type name="Trinos\Heroicons2\ViewModel\Heroicons2Mini">
         <arguments>
             <argument name="iconPathPrefix" xsi:type="string">Trinos_Heroicons2::svg/heroicons2/20/solid</argument>
