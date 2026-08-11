@@ -1,7 +1,7 @@
 {
   "name": "trinos/magento2-heroicons2",
   "description": "Enables to use of Heroicons v2 in Hyva",
-  "version": "2.2.0",
+  "version": "2.2.0.1",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
