@@ -132,6 +132,22 @@ abstract class Heroicons2Base extends SvgIcons implements Heroicons2Interface
     ];
 
     /**
+     * Corrections for magic-method names whose camelCase form cannot be reversed to kebab-case
+     * unambiguously. camelCaseToKebabCase() inserts a hyphen before every digit (needed for e.g.
+     * bars3 => bars-3), but digits carry no case, so a hyphen that was NOT present in the original
+     * icon name (h1, squares-2x2, battery-50, battery-100) is impossible to distinguish and gets
+     * added incorrectly. These entries map the mis-converted result back to the real icon name.
+     */
+    private const CAMEL_CASE_NAME_FIXES = [
+        'h-1' => 'h1',
+        'h-2' => 'h2',
+        'h-3' => 'h3',
+        'squares-2x-2' => 'squares-2x2',
+        'battery-5-0' => 'battery-50',
+        'battery-1-00' => 'battery-100',
+    ];
+
+    /**
      * Magic method to allow iconNameHtml() instead of renderHtml('icon-name'). Subclasses may
      * use `@method` doc blocks to provide autocompletion for available icons.
      */
@@ -152,6 +168,10 @@ abstract class Heroicons2Base extends SvgIcons implements Heroicons2Interface
 
     private function getIconName(string $icon): string
     {
+        if (isset(self::CAMEL_CASE_NAME_FIXES[$icon])) {
+            return self::CAMEL_CASE_NAME_FIXES[$icon];
+        }
+
         if (isset(self::UPDATES_ICON_NAMES[$icon])) {
             return self::UPDATES_ICON_NAMES[$icon];
         }
